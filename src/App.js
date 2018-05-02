@@ -10,6 +10,7 @@ import configureStore from "./configureStore";
 // import reducers from './reducers';
 import "./App.css";
 import ListingsContainer from "./components/listingsContainer";
+import NavBar from "./components/nav";
 
 class App extends Component {
   constructor(props) {
@@ -35,9 +36,13 @@ class App extends Component {
     return (
       <Provider store={this.store}>
         <BrowserRouter>
+          <div>
+          <Route path="/*" component={NavBar}/>
           <Switch>
-            <Route path="/" component={ListingsContainer} />
+            <Route exact path="/" component={ListingsContainer} />
+            <Route exact path="/Listings/:listingId" component={ListingsContainer} />
           </Switch>
+          </div>
         </BrowserRouter>
       </Provider>
     );
