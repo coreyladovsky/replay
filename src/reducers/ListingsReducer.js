@@ -8,7 +8,7 @@ const ListingsReducer = (oldState = {}, action) => {
       let newState = merge({}, oldState, action.listings);
       return newState;
     case RECEIVE_LISTING:
-        return;
+        return merge({}, oldState, {[action.listing.listingKey]: action.listing});
     default:
       return oldState;
   }

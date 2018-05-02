@@ -5,8 +5,9 @@ import ListingShow from './listingShow';
 
 
 const mapStateToProps = (state, ownProps) => {
+  let listing = state.listings[ownProps.match.params.listingId];
   return {
-    listing: Object.values(state.listings)
+    listing
   };
 };
 
