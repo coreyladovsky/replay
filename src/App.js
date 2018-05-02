@@ -10,6 +10,7 @@ import configureStore from "./configureStore";
 // import reducers from './reducers';
 import "./App.css";
 import ListingsContainer from "./components/listingsContainer";
+import ListingShowContainer from "./components/listingShowContainer";
 import NavBar from "./components/nav";
 
 class App extends Component {
@@ -40,7 +41,7 @@ class App extends Component {
           <Route path="/*" component={NavBar}/>
           <Switch>
             <Route exact path="/" component={ListingsContainer} />
-            <Route exact path="/Listings/:listingId" component={ListingsContainer} />
+            <Route exact path="/Listings/:listingId" component={ListingShowContainer} />
           </Switch>
           </div>
         </BrowserRouter>
