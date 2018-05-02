@@ -7,8 +7,10 @@ export const receiveListings = listings => ({
   listings
 });
 
-export const fetchListings = () => {
-  firebase.database().ref("Listings/").once("value", (snapshot) => {
-    debugger
+export const fetchListings = () => dispatch => {
+  let database = firebase.database();
+  let ref = database.ref("Listings");
+  ref.on('value', (snap) => {
+    return dispatch(receiveListings(snap.val()));
   });
 };

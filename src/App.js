@@ -14,23 +14,22 @@ import ListingsContainer from "./components/listingsContainer";
 class App extends Component {
   constructor(props) {
     super(props);
-    // firebaseInit();
+    firebaseInit();
     this.store = configureStore();
   }
-  // 
-  // componentDidMount() {
-  //   let config = {
-  //     apiKey: "AIzaSyCXI_kLNNSMMR-R_7uVvzy7x72K5FTnZuc",
-  //     authDomain: "corey-replaylistings.firebaseapp.com",
-  //     databaseURL: "https://corey-replaylistings.firebaseio.com",
-  //     projectId: "corey-replaylistings",
-  //     storageBucket: "corey-replaylistings.appspot.com",
-  //     messagingSenderId: "763856852812"
-  //   };
-  //   firebase.initializeApp(config);
-  //   let database = firebase.database();
-  //   debugger
-  // }
+  //
+  componentDidMount() {
+    let config = {
+      apiKey: "AIzaSyCXI_kLNNSMMR-R_7uVvzy7x72K5FTnZuc",
+      authDomain: "corey-replaylistings.firebaseapp.com",
+      databaseURL: "https://corey-replaylistings.firebaseio.com",
+      projectId: "corey-replaylistings",
+      storageBucket: "corey-replaylistings.appspot.com",
+      messagingSenderId: "763856852812"
+    };
+    // firebase.initializeApp(config);
+    // let database = firebase.database();
+  }
   render() {
     // const store = createStore(reducers, {}, applyMiddleware(ReduxThunk, logger));
     return (
