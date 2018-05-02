@@ -6,7 +6,7 @@ import Listings from './listings';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    listings: state.listings
+    listings: Object.values(state.listings)
   };
 };
 

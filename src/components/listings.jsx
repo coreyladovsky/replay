@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import ListingItem from './listingItem';
 
 class Listings extends React.Component {
   componentDidMount() {
@@ -6,7 +7,15 @@ class Listings extends React.Component {
   }
 
   render () {
-    return null;
+    const listings = this.props.listings.map(listing => {
+      return <ListingItem key={listing.addressID} listing={listing}/>;
+    });
+
+    return(
+      <ul>
+        {listings}
+      </ul>
+    );
   }
 }
 
