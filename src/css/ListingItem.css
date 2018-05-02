@@ -1,4 +1,58 @@
+.ListingItem {
+  margin-bottom: 30px;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 15px;
+}
+
+
 .ListingItemAddress {
+  font-size: 18px;;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.ListingItemRentAmount {
+  text-align: center;
+}
+
+.ListingItemVideoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.ListingItemVideo {
+  width: 400px;
+  height: 400px;
+  background: black;
+}
+
+.ListingItemLayout {
+  text-align: center;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 18px;
+}
+
+.ListingItemLinkContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ListingItemLink {
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 18px;
+}
+
+.ListingItemLink:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+ul {
   list-style: none;
-  font-size: 14px;;
+  -webkit-padding-start: 0px
 }

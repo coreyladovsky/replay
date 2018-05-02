@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link, withRouter } from "react-router-dom";
 import "../css/ListingItem.css";
 
 class ListingItem extends React.Component {
   constructor(props) {
     super(props);
-    this.niceAddress = this.niceAddress.bind(this);
     this.listing = this.props.listing;
+    this.niceAddress = this.niceAddress.bind(this);
+    this.videoPlay = this.videoPlay.bind(this);
+    this.listingLayout = this.listingLayout.bind(this);
+    this.goToShowPage = this.goToShowPage.bind(this);
   }
 
   niceAddress() {
@@ -23,12 +27,48 @@ class ListingItem extends React.Component {
     );
   }
 
+  videoPlay() {
+    return(
+      <div className="ListingItemVideoContainer">
+      <video controls className="ListingItemVideo">
+        <source src={this.listing.videoURL} type="video/mp4" alt="No Video Available"/>
+      </video>
+    </div>
+    );
+  }
+
+  listingLayout() {
+    return(
+      <ul className="ListingItemLayout">
+        <li>Bedrooms: {this.listing.bedroom}</li>
+        <li>Bathrooms: {this.listing.bathroom}</li>
+      </ul>
+    );
+  }
+
+  goToShowPage() {
+    return(
+      <div className="ListingItemLinkContainer">
+      <Link className="ListingItemLink" to={`./Listings/${this.listing.listingKey}`}>
+        Click here to learn more about this listing!
+      </Link>
+    </div>
+    );
+  }
+
 
   render () {
     return(
       <div className="ListingItem">
         {this.niceAddress()}
+        <div className="ListingItemRentAmount">
+          ${this.listing.rentAmount}
+        </div>
+        {this.videoPlay()}
 
+        {this.listingLayout()}
+
+        {this.goToShowPage()}
       </div>
     );
   }
