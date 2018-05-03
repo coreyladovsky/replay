@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <div className="footerContainer">
         <div>
           <div className="footerAboutUs">About Us: </div>
-          <div>We are a real estate start up, check out our hompage: <a href="http://replaylistings.com" target="_blank">{"http://replaylistings.com"}</a></div>
+          <div>We are a real estate start up, check out our hompage: <a href="http://replaylistings.com" >{"http://replaylistings.com"}</a></div>
         </div>
       </div>
     );

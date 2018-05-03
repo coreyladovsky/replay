@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListing } from '../actions/listingActions';
 import ListingShow from './listingShow';
