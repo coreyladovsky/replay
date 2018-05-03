@@ -3,11 +3,14 @@
   font-family: 'Alegreya Sans', sans-serif;
   max-width: 1000px;
   margin: auto;
+
 }
 
-h1 {
+.ListingShowContainer h1 {
   font-family: 'Alegreya Sans', sans-serif;
   text-align: center;
+  font-size: 30px;
+  padding: 10px;
 }
 
 .ListingShowHeadInfo {
@@ -60,4 +63,5 @@ h1 {
   text-align: left;
   line-height: 25px;
   margin-bottom: 25px;
+  padding: 10px;
 }

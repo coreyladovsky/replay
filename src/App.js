@@ -12,6 +12,7 @@ import "./App.css";
 import ListingsContainer from "./components/listingsContainer";
 import ListingShowContainer from "./components/listingShowContainer";
 import NavBar from "./components/nav";
+import Footer from "./components/footer";
 
 class App extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class App extends Component {
             <Route exact path="/Listings/:listingId" component={ListingShowContainer} />
             <Route path="/" component={ListingsContainer} />
           </Switch>
+          <Route path="/*" component={Footer}/>
           </div>
         </BrowserRouter>
       </Provider>
