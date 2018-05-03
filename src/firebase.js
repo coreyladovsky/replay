@@ -1,5 +1,4 @@
 import * as firebase from 'firebase';
-let database;
 
 
 export const init = () => {
@@ -13,6 +12,5 @@ export const init = () => {
     messagingSenderId: "763856852812"
   };
   firebase.initializeApp(config);
-  database = firebase.database();
 
 };

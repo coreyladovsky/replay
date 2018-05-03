@@ -7,8 +7,8 @@ class UserListingIndex extends React.Component {
   }
 
   render() {
-    const listings = this.props.userListings.map(listing => {
-      return <ListingItem key={listing.addressID} listing={listing} />;
+    const listings = this.props.userListings.map((listing, idx) => {
+      return <ListingItem key={listing.address.addressID + idx} listing={listing} />;
     });
     return <ul>{listings}</ul>;
   }

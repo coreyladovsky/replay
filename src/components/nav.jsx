@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../images/replay_logo.png";
 import "../css/nav.css";
 import { baseUrl } from "../index.js";
