@@ -9,7 +9,7 @@ const FilterReducer = (oldState = state, action) => {
     case FRONT_FILTER:
       return merge({}, oldState, action.bounds);
     case CLEAR_FILTER:
-      return {};
+      return {"noFee": false, "convertible": false, "gym": false, "petFriendly": false, "laundry": false, "doorman": false, "dishwasher": false, "elevator": false, "roofDeck": false};
     default:
       return oldState;
   }

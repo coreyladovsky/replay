@@ -13,6 +13,7 @@ class ListingShow extends React.Component {
 
   componentDidMount() {
       window.scrollTo(0, 0);
+      this.props.clearFilter();
       this.props.fetchListing(this.props.match.params.listingId);
   }
 
@@ -28,8 +29,8 @@ class ListingShow extends React.Component {
 
   amenitiesDisplay() {
     const {amenities} = this.props.listing;
-    let amens = amenities.map( amen => {
-      return <li>{amen}</li>;
+    let amens = amenities.map( (amen, i) => {
+      return <li key={i}>{amen}</li>;
     });
 
     return(
