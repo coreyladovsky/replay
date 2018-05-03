@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import Listings from './ListingsReducer.js';
+import Listings from './listingsReducer.js';
+import FilterReducer from './filterReducer';
 
 export default combineReducers({
-  listings: Listings
+  listings: Listings,
+  filters: FilterReducer
 });

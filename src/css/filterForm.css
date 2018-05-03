@@ -1,0 +1,21 @@
+.filterFormUl {
+  position: fixed;
+  right: 112px;
+  background: white;
+  display: none;
+  margin-top: 40px;
+  font-family: 'Alegreya Sans', sans-serif;
+
+}
+
+.filterFormUl label {
+  margin-left: 5px;
+}
+
+
+
+@media only screen and (min-width: 900px) {
+  .filterFormUl {
+    display: block;
+  }
+}
