@@ -14,6 +14,7 @@ import ListingShowContainer from "./components/listingShowContainer";
 import NavBar from "./components/nav";
 import Footer from "./components/footer";
 import { baseUrl } from './index.js';
+import ListingUserIndexContainer from "./components/listingUserIndexContainer";
 
 
 class App extends Component {
@@ -44,9 +45,10 @@ class App extends Component {
           <Route path={baseUrl + "/*"} component={NavBar}/>
           <Switch>
             <Route exact path={baseUrl + "/Listings/:listingId"} component={ListingShowContainer} />
+            <Route exact path={baseUrl + "/UserListings/:authorKey"} component={ListingUserIndexContainer} />
             <Route path={baseUrl + "/"} component={ListingsContainer} />
           </Switch>
-          <Route path={baseUrl + "/*"} component={Footer}/>
+          <Route exact path={baseUrl + "/Listings/:listingId"} component={Footer}/>
           </div>
         </BrowserRouter>
       </Provider>

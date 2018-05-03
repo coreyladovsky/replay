@@ -19,6 +19,16 @@ export const fetchListings = () => dispatch => {
   ref.on('value', (snap) => {
     return dispatch(receiveListings(snap.val()));
   });
+
+  // const listings = firebase.database().ref().child("Listings");
+  // const approved = firebase.database().ref().child("Approved");
+  //
+  // approved.on('child_added', (snap) => {
+  //   listings.child(snap.key).once('value', listing => {
+  //     return dispatch(receiveListing(listing.val()));
+  //   });
+  // });
+
 };
 
 export const fetchListing = (listingId) => dispatch => {

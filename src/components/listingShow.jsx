@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/ListingShow.css';
+import { baseUrl } from '../index.js';
 
 class ListingShow extends React.Component {
   constructor(props) {
@@ -55,7 +57,7 @@ class ListingShow extends React.Component {
     if(!this.props.listing) {
       return null;
     } else {
-      const {agent, videoURL, rentAmount, bedroom, bathroom} = this.props.listing;
+      const {agent, videoURL, rentAmount, bedroom, bathroom, authorKey} = this.props.listing;
     return(
       <div className="ListingShowContainer">
         <h1>Apartment For Rent</h1>
@@ -88,6 +90,9 @@ class ListingShow extends React.Component {
       </div>
       {this.contactInfo()}
 
+      <div className="ListingShowUserLink">
+        <Link to={baseUrl + "/UserListings/" + authorKey}> More listings by this User </Link>
+      </div>
       </div>
     );
   }

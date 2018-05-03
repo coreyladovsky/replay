@@ -1,13 +1,13 @@
 import React from 'react';
 import ListingItem from './listingItem';
 
-class Listings extends React.Component {
+class UserListingIndex extends React.Component {
   componentDidMount() {
       this.props.fetchListings();
   }
 
   render () {
-    const listings = this.props.listings.map(listing => {
+    const listings = this.props.userListings.map(listing => {
       return <ListingItem key={listing.addressID} listing={listing}/>;
     });
     return(
@@ -18,4 +18,4 @@ class Listings extends React.Component {
   }
 }
 
-export default Listings;
+export default UserListingIndex;
