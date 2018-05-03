@@ -1,5 +1,4 @@
 import React from 'react';
-import * as transform from 'unix-timestamp-transform' ;
 import '../css/ListingShow.css';
 
 class ListingShow extends React.Component {
@@ -16,9 +15,13 @@ class ListingShow extends React.Component {
   }
 
   getDate() {
-    let time = this.props.listing.timePosted;
-    let date = transform.transformUnixTime(time).toDateString();
-    return date;
+    let a = new Date(this.props.listing.timePosted * 1000);
+    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let year = a.getFullYear();
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let time = month + ' ' + date + ', '  + year ;
+    return time;
   }
 
   amenitiesDisplay() {
