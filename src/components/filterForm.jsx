@@ -14,7 +14,7 @@ class FilterForm extends React.Component {
       result[e.target.value] = e.target.checked;
       return result;
     };
-    let sol = stateObj()
+    let sol = stateObj();
     this.setState(sol);
     this.props.frontFilter(sol);
   }
