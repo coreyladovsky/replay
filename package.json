@@ -2,6 +2,7 @@
   "name": "replay",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://coreyladovsky.github.io/replay",
   "dependencies": {
     "firebase": "^4.13.1",
     "firebase-admin": "^5.12.0",
@@ -17,6 +18,8 @@
     "unix-timestamp-transform": "0.0.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
