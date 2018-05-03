@@ -29,7 +29,7 @@ class ListingShow extends React.Component {
 
     return(
       <div>
-        <h3>Amenities: </h3>
+        <div className="ListingShowListInfo">Amenities: </div>
         <ul>
           {amens}
         </ul>
@@ -41,7 +41,7 @@ class ListingShow extends React.Component {
     const { address, agent } = this.props.listing;
     return(
 
-    <div>
+    <div className="ListingShowContact">
       Check out this apartment on: {address.street}, {address.subNeighborhood}. Please contact the agent by texting or calling the following number: {agent.phone},
       or email the agent directly: <a href={`mailto:${agent.email}`} >{agent.email}</a>
     </div>
@@ -72,17 +72,17 @@ class ListingShow extends React.Component {
           <source src={videoURL} type="video/mp4" alt="No Video Available"/>
         </video>
       </div>
-        <div>Rent: ${rentAmount}</div>
-
-      <div>
-        <h2>Layout: </h2>
+        <div className="ListingShowRent">Rent: ${rentAmount}</div>
+        <div  className="ListingShowListInfoContainer">
+        <div>
+        <div className="ListingShowListInfo">Layout: </div>
         <ul>
           <li>Bedrooms: {bedroom}</li>
           <li>Bathrooms: {bathroom}</li>
         </ul>
       </div>
       {this.amenitiesDisplay()}
-
+      </div>
       {this.contactInfo()}
 
       </div>

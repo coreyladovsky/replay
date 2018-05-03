@@ -38,3 +38,26 @@ h1 {
   height: 500px;
   background: black;
 }
+
+.ListingShowRent {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ListingShowListInfoContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ListingShowListInfo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.ListingShowContact {
+  max-width: 80%;
+  margin: auto;
+  text-align: left;
+  line-height: 25px;
+  margin-bottom: 25px;
+}
