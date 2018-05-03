@@ -1,0 +1,40 @@
+.ListingShowContainer {
+  text-align: center;
+  font-family: 'Alegreya Sans', sans-serif;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-family: 'Alegreya Sans', sans-serif;
+  text-align: center;
+}
+
+.ListingShowHeadInfo {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.ListingShowHeadInfo ul {
+  display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ListingShowHeadInfo ul li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ListingShowVideoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ListingShowVideo {
+  width: 700px;
+  height: 500px;
+  background: black;
+}

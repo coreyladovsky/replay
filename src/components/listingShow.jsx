@@ -1,11 +1,13 @@
 import React from 'react';
 import * as transform from 'unix-timestamp-transform' ;
+import '../css/ListingShow.css';
 
 class ListingShow extends React.Component {
   constructor(props) {
     super(props);
     this.getDate = this.getDate.bind(this);
     this.contactInfo = this.contactInfo.bind(this);
+    this.amenitiesDisplay = this.amenitiesDisplay.bind(this);
   }
 
   componentDidMount() {
@@ -17,6 +19,22 @@ class ListingShow extends React.Component {
     let time = this.props.listing.timePosted;
     let date = transform.transformUnixTime(time).toDateString();
     return date;
+  }
+
+  amenitiesDisplay() {
+    const {amenities} = this.props.listing;
+    let amens = amenities.map( amen => {
+      return <li>{amen}</li>;
+    });
+
+    return(
+      <div>
+        <h3>Amenities: </h3>
+        <ul>
+          {amens}
+        </ul>
+      </div>
+    );
   }
 
   contactInfo() {
@@ -34,11 +52,11 @@ class ListingShow extends React.Component {
     if(!this.props.listing) {
       return null;
     } else {
-      const {agent, videoURL, rentAmount} = this.props.listing;
+      const {agent, videoURL, rentAmount, bedroom, bathroom} = this.props.listing;
     return(
-      <div>
+      <div className="ListingShowContainer">
         <h1>Apartment For Rent</h1>
-        <div>
+        <div className="ListingShowHeadInfo">
           <ul>
             <li>Realtor: </li>
             <li>{agent.first + " " + agent.last}  </li>
@@ -49,11 +67,21 @@ class ListingShow extends React.Component {
           </ul>
         </div>
 
+        <div className="ListingShowVideoContainer">
         <video controls className="ListingShowVideo">
           <source src={videoURL} type="video/mp4" alt="No Video Available"/>
         </video>
+      </div>
+        <div>Rent: ${rentAmount}</div>
 
-        <div>${rentAmount}</div>
+      <div>
+        <h2>Layout: </h2>
+        <ul>
+          <li>Bedrooms: {bedroom}</li>
+          <li>Bathrooms: {bathroom}</li>
+        </ul>
+      </div>
+      {this.amenitiesDisplay()}
 
       {this.contactInfo()}
 
