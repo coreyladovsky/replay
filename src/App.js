@@ -13,6 +13,8 @@ import ListingsContainer from "./components/listingsContainer";
 import ListingShowContainer from "./components/listingShowContainer";
 import NavBar from "./components/nav";
 import Footer from "./components/footer";
+import { baseUrl } from './index.js';
+
 
 class App extends Component {
   constructor(props) {
@@ -39,12 +41,12 @@ class App extends Component {
       <Provider store={this.store}>
         <BrowserRouter>
           <div>
-          <Route path="/*" component={NavBar}/>
+          <Route path={baseUrl + "/*"} component={NavBar}/>
           <Switch>
-            <Route exact path="/Listings/:listingId" component={ListingShowContainer} />
-            <Route path="/" component={ListingsContainer} />
+            <Route exact path={baseUrl + "/Listings/:listingId"} component={ListingShowContainer} />
+            <Route path={baseUrl + "/"} component={ListingsContainer} />
           </Switch>
-          <Route path="/*" component={Footer}/>
+          <Route path={baseUrl + "/*"} component={Footer}/>
           </div>
         </BrowserRouter>
       </Provider>

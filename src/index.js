@@ -15,5 +15,6 @@ import App from './App';
 // };
 // firebase.initializeApp(config);
 
+export const baseUrl = process.env.PUBLIC_URL;
 ReactDOM.render(<App />, document.getElementById('root'));
 // registerServiceWorker();
