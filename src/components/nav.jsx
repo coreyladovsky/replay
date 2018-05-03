@@ -2,8 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../images/replay_logo.png";
 import "../css/nav.css";
-import { baseUrl } from '../index.js';
-
+import { baseUrl } from "../index.js";
 
 class NavBar extends React.Component {
   render() {
@@ -11,10 +10,10 @@ class NavBar extends React.Component {
       <div className="navContainer">
         <div className="navContainerLogo">
           <Link to={baseUrl + "/"}>
-          <img src={logo} alt="" />
-        </Link>
+            <img src={logo} alt="" />
+          </Link>
         </div>
-        <div className="AllListings" >
+        <div className="AllListings">
           <Link to={baseUrl + "/"}>All Listings</Link>
         </div>
       </div>

@@ -1,7 +1,17 @@
 import { FRONT_FILTER, CLEAR_FILTER } from "../actions/filterActions";
 import merge from "lodash/merge";
 
-const state = {"noFee": false, "convertible": false, "gym": false, "petFriendly": false, "laundry": false, "doorman": false, "dishwasher": false, "elevator": false, "roofDeck": false};
+const state = {
+  noFee: false,
+  convertible: false,
+  gym: false,
+  petFriendly: false,
+  laundry: false,
+  doorman: false,
+  dishwasher: false,
+  elevator: false,
+  roofDeck: false
+};
 
 const FilterReducer = (oldState = state, action) => {
   Object.freeze(oldState);
@@ -9,7 +19,7 @@ const FilterReducer = (oldState = state, action) => {
     case FRONT_FILTER:
       return merge({}, oldState, action.bounds);
     case CLEAR_FILTER:
-      return {"noFee": false, "convertible": false, "gym": false, "petFriendly": false, "laundry": false, "doorman": false, "dishwasher": false, "elevator": false, "roofDeck": false};
+      return state;
     default:
       return oldState;
   }

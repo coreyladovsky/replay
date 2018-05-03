@@ -1,14 +1,14 @@
-import { connect } from 'react-redux';
-import { fetchListings } from '../actions/listingActions';
-import Listings from './listings';
+import { connect } from "react-redux";
+import { fetchListings } from "../actions/listingActions";
+import Listings from "./listings";
 
 const checkFilter = (listing, filters) => {
-  if(!listing.amenities) {
+  if (!listing.amenities) {
     return false;
   }
 
   for (let i = 0; i < filters.length; i++) {
-    if(!listing.amenities.includes(filters[i]) ){
+    if (!listing.amenities.includes(filters[i])) {
       return false;
     }
   }
@@ -17,24 +17,22 @@ const checkFilter = (listing, filters) => {
 
 const mapStateToProps = (state, ownProps) => {
   let filters = [];
-   Object.keys(state.filters).forEach( key => {
-     if(state.filters[key]) {
-       filters.push(key);
-     }
-   });
+  Object.keys(state.filters).forEach(key => {
+    if (state.filters[key]) {
+      filters.push(key);
+    }
+  });
 
-
-   let listings = Object.values(state.listings);
-   if (filters.length !== 0) {
-     let newlist = [];
-     listings.forEach(listing => {
-       if (checkFilter(listing, filters)) {
-         newlist.push(listing);
-       }
-     });
-     listings = newlist;
-   }
-
+  let listings = Object.values(state.listings);
+  if (filters.length !== 0) {
+    let newlist = [];
+    listings.forEach(listing => {
+      if (checkFilter(listing, filters)) {
+        newlist.push(listing);
+      }
+    });
+    listings = newlist;
+  }
 
   return {
     listings,
@@ -44,7 +42,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchtoProps = (dispatch, ownProps) => {
   return {
-    fetchListings: () => dispatch(fetchListings()),
+    fetchListings: () => dispatch(fetchListings())
   };
 };
 

@@ -4,7 +4,17 @@ import "../css/filterForm.css";
 class FilterForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {"noFee": false, "convertible": false, "gym": false, "petFriendly": false, "laundry": false, "doorman": false, "dishwasher": false, "elevator": false, "roofDeck": false};
+    this.state = {
+      noFee: false,
+      convertible: false,
+      gym: false,
+      petFriendly: false,
+      laundry: false,
+      doorman: false,
+      dishwasher: false,
+      elevator: false,
+      roofDeck: false
+    };
     this.updateFilter = this.updateFilter.bind(this);
   }
 

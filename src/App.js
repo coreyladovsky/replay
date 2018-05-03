@@ -4,19 +4,15 @@ import { Provider } from "react-redux";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import firebase from "firebase";
-// import ReduxThunk from 'redux-thunk';
-// import logger from 'redux-logger';
 import configureStore from "./configureStore";
-// import reducers from './reducers';
-import "./App.css";
+import "./css/App.css";
 import ListingsContainer from "./components/listingsContainer";
 import ListingShowContainer from "./components/listingShowContainer";
 import NavBar from "./components/nav";
 import Footer from "./components/footer";
-import { baseUrl } from './index.js';
+import { baseUrl } from "./index.js";
 import ListingUserIndexContainer from "./components/listingUserIndexContainer";
-import FilterFormContainer from './components/filterFormContainer';
-
+import FilterFormContainer from "./components/filterFormContainer";
 
 class App extends Component {
   constructor(props) {
@@ -24,7 +20,7 @@ class App extends Component {
     firebaseInit();
     this.store = configureStore();
   }
-  //
+
   componentDidMount() {
     let config = {
       apiKey: "AIzaSyCXI_kLNNSMMR-R_7uVvzy7x72K5FTnZuc",
@@ -34,23 +30,32 @@ class App extends Component {
       storageBucket: "corey-replaylistings.appspot.com",
       messagingSenderId: "763856852812"
     };
-    // firebase.initializeApp(config);
-    // let database = firebase.database();
   }
   render() {
-    // const store = createStore(reducers, {}, applyMiddleware(ReduxThunk, logger));
     return (
       <Provider store={this.store}>
         <BrowserRouter>
           <div>
-          <Route path={baseUrl + "/*"} component={NavBar}/>
-          <Route exact path={baseUrl + "/"} component={FilterFormContainer}/>
-          <Switch>
-            <Route exact path={baseUrl + "/Listings/:listingId"} component={ListingShowContainer} />
-            <Route exact path={baseUrl + "/UserListings/:authorKey"} component={ListingUserIndexContainer} />
-            <Route path={baseUrl + "/"} component={ListingsContainer} />
-          </Switch>
-          <Route exact path={baseUrl + "/Listings/:listingId"} component={Footer}/>
+            <Route path={baseUrl + "/*"} component={NavBar} />
+            <Route exact path={baseUrl + "/"} component={FilterFormContainer} />
+            <Switch>
+              <Route
+                exact
+                path={baseUrl + "/Listings/:listingId"}
+                component={ListingShowContainer}
+              />
+              <Route
+                exact
+                path={baseUrl + "/UserListings/:authorKey"}
+                component={ListingUserIndexContainer}
+              />
+              <Route path={baseUrl + "/"} component={ListingsContainer} />
+            </Switch>
+            <Route
+              exact
+              path={baseUrl + "/Listings/:listingId"}
+              component={Footer}
+            />
           </div>
         </BrowserRouter>
       </Provider>

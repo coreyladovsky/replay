@@ -21,13 +21,14 @@ export const fetchListings = () => dispatch => {
   });
 
   // const listings = firebase.database().ref().child("Listings");
-  // const approved = firebase.database().ref().child("Approved");
-  //
-  // approved.on('child_added', (snap) => {
-  //   listings.child(snap.key).once('value', listing => {
-  //     return dispatch(receiveListing(listing.val()));
-  //   });
-  // });
+// const approved = firebase.database().ref().child("Approved");
+//
+// approved.on('child_added', (snap) => {
+//   listings.child(snap.key).once('value', listing => {
+//     return dispatch(receiveListing(listing.val()));
+//   });
+// });
+
 
 };
 

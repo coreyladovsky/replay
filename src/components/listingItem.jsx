@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import "../css/ListingItem.css";
-import { baseUrl } from '../index.js';
+import { baseUrl } from "../index.js";
 
 class ListingItem extends React.Component {
   constructor(props) {
@@ -16,30 +16,30 @@ class ListingItem extends React.Component {
   niceAddress() {
     let street = this.listing.address.street;
     let district = this.listing.address.subNeighborhood;
-    return(
+    return (
       <ul className="ListingItemAddress">
-        <li>
-          {street}
-        </li>
-        <li>
-          {district}
-        </li>
+        <li>{street}</li>
+        <li>{district}</li>
       </ul>
     );
   }
 
   videoPlay() {
-    return(
+    return (
       <div className="ListingItemVideoContainer">
-      <video controls className="ListingItemVideo">
-        <source src={this.listing.videoURL} type="video/mp4" alt="No Video Available"/>
-      </video>
-    </div>
+        <video controls className="ListingItemVideo">
+          <source
+            src={this.listing.videoURL}
+            type="video/mp4"
+            alt="No Video Available"
+          />
+        </video>
+      </div>
     );
   }
 
   listingLayout() {
-    return(
+    return (
       <ul className="ListingItemLayout">
         <li>Bedrooms: {this.listing.bedroom}</li>
         <li>Bathrooms: {this.listing.bathroom}</li>
@@ -48,23 +48,23 @@ class ListingItem extends React.Component {
   }
 
   goToShowPage() {
-    return(
+    return (
       <div className="ListingItemLinkContainer">
-      <Link className="ListingItemLink" to={ baseUrl + `/Listings/${this.listing.listingKey}`}>
-        Click here to learn more about this listing!
-      </Link>
-    </div>
+        <Link
+          className="ListingItemLink"
+          to={baseUrl + `/Listings/${this.listing.listingKey}`}
+        >
+          Click here to learn more about this listing!
+        </Link>
+      </div>
     );
   }
 
-
-  render () {
-    return(
+  render() {
+    return (
       <div className="ListingItem">
         {this.niceAddress()}
-        <div className="ListingItemRentAmount">
-          ${this.listing.rentAmount}
-        </div>
+        <div className="ListingItemRentAmount">${this.listing.rentAmount}</div>
         {this.videoPlay()}
 
         {this.listingLayout()}

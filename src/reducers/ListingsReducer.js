@@ -1,5 +1,8 @@
-import merge from 'lodash/merge';
-import { RECEIVE_LISTINGS, RECEIVE_LISTING } from "../actions/listingActions.js";
+import merge from "lodash/merge";
+import {
+  RECEIVE_LISTINGS,
+  RECEIVE_LISTING
+} from "../actions/listingActions.js";
 
 const ListingsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -8,10 +11,12 @@ const ListingsReducer = (oldState = {}, action) => {
       let newState = merge({}, oldState, action.listings);
       return newState;
     case RECEIVE_LISTING:
-      if(!action.listing) {
-        return oldState
+      if (!action.listing) {
+        return oldState;
       }
-        return merge({}, oldState, {[action.listing.listingKey]: action.listing});
+      return merge({}, oldState, {
+        [action.listing.listingKey]: action.listing
+      });
     default:
       return oldState;
   }

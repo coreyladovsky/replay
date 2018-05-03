@@ -1,20 +1,16 @@
-import React from 'react';
-import ListingItem from './listingItem';
+import React from "react";
+import ListingItem from "./listingItem";
 
 class UserListingIndex extends React.Component {
   componentDidMount() {
-      this.props.fetchListings();
+    this.props.fetchListings();
   }
 
-  render () {
+  render() {
     const listings = this.props.userListings.map(listing => {
-      return <ListingItem key={listing.addressID} listing={listing}/>;
+      return <ListingItem key={listing.addressID} listing={listing} />;
     });
-    return(
-      <ul>
-        {listings}
-      </ul>
-    );
+    return <ul>{listings}</ul>;
   }
 }
 

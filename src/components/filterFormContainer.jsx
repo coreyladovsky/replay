@@ -1,17 +1,14 @@
-import { connect } from 'react-redux';
-import { frontFilter } from '../actions/filterActions';
-import FilterForm from './filterForm';
-
+import { connect } from "react-redux";
+import { frontFilter } from "../actions/filterActions";
+import FilterForm from "./filterForm";
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-
-  };
+  return {};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    frontFilter: (bounds) => dispatch(frontFilter(bounds)),
+    frontFilter: bounds => dispatch(frontFilter(bounds))
   };
 };
 
