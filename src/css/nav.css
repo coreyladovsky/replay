@@ -1,10 +1,24 @@
 .navContainer {
+  border-bottom: 1px solid lightgrey;
+  padding: 10px;
+
+}
+
+.navContainerLogo {
   display: flex;
   justify-content: center;
   padding: 10px;
-  border-bottom: 1px solid lightgrey;
 }
 
-.navContainer img {
+.navContainerLogo img {
   height: 100px;
+}
+
+.AllListings {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.AllListings a {
+  margin-right: 20px;
 }

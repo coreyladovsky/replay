@@ -40,8 +40,8 @@ class App extends Component {
           <div>
           <Route path="/*" component={NavBar}/>
           <Switch>
-            <Route exact path="/" component={ListingsContainer} />
             <Route exact path="/Listings/:listingId" component={ListingShowContainer} />
+            <Route path="/" component={ListingsContainer} />
           </Switch>
           </div>
         </BrowserRouter>
